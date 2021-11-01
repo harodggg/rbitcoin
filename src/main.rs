@@ -15,6 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Polkadot.  If not, see <http://www.gnu.org/licenses/>.
 
-fn main() {
-    println!("Hello, world!");
+use color_eyre::eyre;
+
+fn main() -> eyre::Result<()> {
+    color_eyre::install()?;
+    rbitcoin_cli::run()?;
+    Ok(())
 }
