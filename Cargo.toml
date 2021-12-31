@@ -8,6 +8,8 @@ edition = "2018"
 [dependencies]
 color-eyre = { version = "0.5.11", default-features = false }
 rbitcoin-cli = { path = "cli"}
+log = "0.4"
+pretty_env_logger = "0.3"
 
 
 

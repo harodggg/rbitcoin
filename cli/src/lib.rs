@@ -1,5 +1,6 @@
 use std::io::Error as error;
 use structopt::StructOpt;
+use log::info;
 
 #[derive(StructOpt,Debug)]
 #[structopt(about = "Select a subcommand")]
@@ -10,7 +11,7 @@ enum SubComand{
 
     #[structopt(name = "btc")]
     Btc {
-       
+        ip: String,
     },
 
     #[structopt(name = "regtest")]
@@ -37,6 +38,10 @@ struct Opt {
 }
 
 pub fn run() -> Result<(),error> { 
-	Opt::from_args();
+	let args = Opt::from_args();
+
+    println!("{:?}", args);
+    info!("启动客户端");
 	Ok(())
 }
+

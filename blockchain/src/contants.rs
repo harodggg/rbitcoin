@@ -1,0 +1,8 @@
+
+
+
+type amount = u64;
+
+
+
+
