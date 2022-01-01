@@ -1,6 +1,5 @@
 
 
-
 struct BlockHeader { 
 	version: u32,
 	timestamp: u64,
@@ -11,19 +10,26 @@ struct BlockHeader {
 }
 
 struct Transaction { 
+	version: i32,
+	locktime: u32,
 	inputs: Vec![TransactionInput],
-	vouts: Vec![TransactionOutput],
-	
+	outputs: Vec![TransactionOutput],
 }
 
 struct TransactionInput { 
-
+	pre_outpoint: OutPoint,
 	scriptSig: Bytes,
-
 }
+
 struct TransactionOutput { 
 	value:u64,
 	scriptPubKey: Bytes,
+
+}
+
+struct OutPoint { 
+	point: H256,
+	index: u32,
 
 }
 
