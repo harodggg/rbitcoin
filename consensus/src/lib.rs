@@ -1,3 +1,5 @@
+use pow;
+
 #[cfg(test)]
 mod tests {
     #[test]

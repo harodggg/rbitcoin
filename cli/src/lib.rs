@@ -6,27 +6,19 @@ use log::info;
 #[structopt(about = "Select a subcommand")]
 enum SubComand{
     #[structopt(name = "testnet")]
-    Testnet { 
-    },
+    Testnet,
 
     #[structopt(name = "btc")]
-    Btc {
-        ip: String,
-    },
+    Btc,
 
     #[structopt(name = "regtest")]
-    Regtest { 
-    },
+    Regtest,
 
     #[structopt(name = "import")]
-    Import {
-        import: String,
-    },
+    Import,
 
     #[structopt(name = "rollback")]
-    Rollback { 
-        rollback: String,
-    }
+    Rollback,
 
 }
 
@@ -39,9 +31,14 @@ struct Opt {
 
 pub fn run() -> Result<(),error> { 
 	let args = Opt::from_args();
-
-    println!("{:?}", args);
     info!("启动客户端");
+    match &args.subcommand {
+
+        SubComand::Testnet => {println!("Btc测试网启动")},
+        SubComand::Btc => {println!("BTC主网启动")},
+        _ => println!("kdfjdk"),
+    }
+    
 	Ok(())
 }
 

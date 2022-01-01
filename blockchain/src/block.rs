@@ -1,5 +1,6 @@
 
 
+
 struct BlockHeader { 
 	version: u32,
 	timestamp: u64,
@@ -10,10 +11,7 @@ struct BlockHeader {
 }
 
 struct Block { 
-
 	blockheader: BlockHeader,
-	transaction: []transactions,
-
 }
 
 
