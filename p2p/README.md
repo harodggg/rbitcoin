@@ -1,0 +1,1 @@
+bitcoin Gossip 如何设计？
