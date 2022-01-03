@@ -17,6 +17,46 @@ struct Node {
     state: State,
 }
 
+struct GossipProtocol {
+    config: Config
+}
+
+struct Config { 
+
+}
+
+struct MemberList{
+}
+
+impl MemberList { 
+    fn default() -> self {
+
+    }
+
+    fn new()  -> self { 
+        self.default()
+    }
+
+}
+
+
+
+impl GossipProtocal { 
+    
+    fn create(node:Node) -> () { 
+        1，建立成员列表
+        new 
+
+        2，设置node状态
+        set.alive
+        node.alive();
+
+        3,进行shedule ，周期性事件
+        shedule()     
+            1，建立三个协程。   
+    }
+}
+
 1, 周期性任务
     1，故障检测
         1,直接探测
@@ -31,7 +71,6 @@ struct Node {
         3，依次向那些节点发送广播信息
 
 
-fn s
 #[cfg(test)]
 pub mod Tests{
     
