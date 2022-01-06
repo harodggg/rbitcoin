@@ -5,38 +5,28 @@ enum State {
     Dead,
 }
 
-enum Address {
+enum Addr {
     Ipv4(u8,u8,u8,u8),
     Ipv6(String)
 }
 
 struct Node {
     name: String,
-    address: Address,
+    address: Addr,
     port: u32,
     state: State,
 }
 
 struct GossipProtocol {
-    config: Config
+    config: Config,
+    connection: vec![addr]
+    
 }
 
-struct Config { 
-
-}
-
-struct MemberList{
-}
-
-impl MemberList { 
-    fn default() -> self {
-
-    }
-
-    fn new()  -> self { 
-        self.default()
-    }
-
+struct Config {
+    seed: vec![$node],
+    thread_num: u16,
+    
 }
 
 
@@ -44,8 +34,8 @@ impl MemberList {
 impl GossipProtocal { 
     
     fn create(node:Node) -> () { 
-        1，建立成员列表
-        new 
+        1，建立初使得成员列表
+        config = new Config()
 
         2，设置node状态
         set.alive
