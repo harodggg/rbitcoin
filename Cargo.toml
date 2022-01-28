@@ -9,7 +9,7 @@ edition = "2018"
 color-eyre = { version = "0.5.11", default-features = false }
 rbitcoin-cli = { path = "cli"}
 log = "0.4"
-logs = { path = "logs" }
+logs = { path = "rlogs" }
 
 
 
