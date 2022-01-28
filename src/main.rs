@@ -16,14 +16,14 @@
 // along with Polkadot.  If not, see <http://www.gnu.org/licenses/>.
 
 use color_eyre::eyre;
-use pretty_env_logger;
+use logs;
 #[macro_use] extern crate log;
 
 
 fn main() -> eyre::Result<()> {
     color_eyre::install()?;
-    pretty_env_logger::init();
     info!("开始客户端");
+    logs::init();
     rbitcoin_cli::run()?;
     Ok(())
 }
