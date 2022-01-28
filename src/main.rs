@@ -17,8 +17,8 @@
 
 use color_eyre::eyre;
 use logs;
-#[macro_use] extern crate log;
-
+#[macro_use]
+extern crate log;
 
 fn main() -> eyre::Result<()> {
     color_eyre::install()?;
