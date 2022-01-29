@@ -76,15 +76,15 @@ trait state_merge {
 
 impl GossipProtocal { 
     
-    fn create(node:Node) -> () { 
-        //1，建立初使得成员列表
-        config = new Config()
+    fn create(config:&Config) -> () { 
+        ///1，建立初使得成员列表
+        config = config.default();
 
-        //2，设置node状态
+        ///2，设置node状态
         set.alive
         node.alive();
 
-        //3,进行shedule ，周期性事件
+        ///3,进行shedule ，周期性事件
         fn shedule() {
             tokio::std::thread::spawn(move || {
                 
@@ -99,33 +99,19 @@ impl GossipProtocal {
         }    
             Ok()
     }
+
+    fn add_node(node:Node) { 
+
+    }
+
+    fn send_message(node:Node,message:String) -> Result((),Error) { 
+
+    }
+
+    fn brockcast_message(node:vec<Node>,message: String) -> Result((),Error) { 
+
+    }
 }
-
-
-
-1, 周期性任务 scheme() -> bool 
-    1，故障检测 troubleshooting()
-        1,直接探测direct_detection() -> bool { 
-
-        }
-
-        2，间接探测indirect_detectio() -> bool { 
-
-        }
-
-    2，状态合并 state_merge()
-        1,发送本地状态信息 send_local_state(message:bytes) -> bool
-        2，获取远端状态信息 get_remote_state() -> bytes
-        3，将本地状态信息和远端信息合并merge() -> bool { 
-            compare_state(local_state,remote_state) -> bool 
-            update_state() -> bool { 
-
-            }
-        }
-    3，广播gossip消息。broadcast(message):
-        1，从满足条件的前提节点，选几个节点。
-        2，构造广播信息
-        3，依次向那些节点发送广播信息
 
 
 #[cfg(test)]
