@@ -13,7 +13,7 @@
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with Polkadot.  If not, see <http://www.gnu.org/licenses/>.
+// along with Rbitcoin.  If not, see <http://www.gnu.org/licenses/>.
 
 use ansi_term::Color;
 use chrono::prelude::Local;
@@ -62,7 +62,7 @@ mod tests {
     use super::*;
     #[test]
     fn it_works() {
-        init();
+        init(LevelFilter::Trace);
         log::info!("good");
         log::debug!("debug");
     }

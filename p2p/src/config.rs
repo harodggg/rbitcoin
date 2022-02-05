@@ -1,6 +1,5 @@
 
-
-pub Struct Config;
+struct Config(u8);
 
 impl Config { 
     fn Default(&self) -> Config { 
