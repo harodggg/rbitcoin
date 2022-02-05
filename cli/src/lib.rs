@@ -54,5 +54,8 @@ fn show_metadata_message(software_name: &str,author: &str,version: u64) {
     info!("<作者>: {}                 **", author);
     info!("<rbitcoin版本>: {}       **", version);
     info!("**********************************");
-
+    warn!("warning");
+    debug!("debug");
+    error!("error");
+    trace!("trace");
 }

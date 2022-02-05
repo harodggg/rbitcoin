@@ -18,26 +18,41 @@
 use ansi_term::Color;
 use chrono::prelude::Local;
 use env_logger::{Builder, Target};
-use log::LevelFilter;
+use log::{LevelFilter, Record};
 use std::io::Write;
 
 fn strftime() -> String {
     Local::now().format("%Y-%m-%d %H:%M:%S").to_string()
 }
 
-pub fn init() {
+fn level_add_color(record: &Record) -> String {
+  let  record_level_and_colors = match record.level() { 
+            log::Level::Error =>  Color::Fixed(9).bold().paint(record.level().to_string()),
+            log::Level::Debug =>  Color::Fixed(14).paint(record.level().to_string()),
+            log::Level::Info  =>  Color::Fixed(10).paint(record.level().to_string()),
+            log::Level::Trace =>  Color::Fixed(12).paint(record.level().to_string()),
+            log::Level::Warn  =>  Color::Fixed(11).bold().paint(record.level().to_string()),
+    };
+        
+    format!(
+                "{} [{}] {}",
+                Color::Fixed(8).bold().paint(strftime()),
+                record_level_and_colors,
+                record.args() 
+    )
+}
+
+pub fn init(log_level: LevelFilter) {
     let mut builder = Builder::from_default_env();
     builder
         .format(|buf, record| {
             writeln!(
                 buf,
-                "{} [{}] {}",
-                Color::Fixed(8).bold().paint(strftime()),
-                record.level(),
-                record.args()
+                "{}",
+                level_add_color(record)
             )
         })
-        .filter(None, LevelFilter::Info);
+        .filter(None, log_level);
     builder.target(Target::Stdout);
     builder.init();
 }
