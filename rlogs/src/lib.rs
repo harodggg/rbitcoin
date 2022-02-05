@@ -27,7 +27,6 @@ fn strftime() -> String {
 
 pub fn init() {
     let mut builder = Builder::from_default_env();
-
     builder
         .format(|buf, record| {
             writeln!(

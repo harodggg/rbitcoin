@@ -1,2 +1,2 @@
 
-const PORTOCAL_VERSION = 100;
+const PORTOCAL_VERSION:u64 = 100;
