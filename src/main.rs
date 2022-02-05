@@ -16,8 +16,8 @@
 // along with Polkadot.  If not, see <http://www.gnu.org/licenses/>.
 
 use color_eyre::eyre;
-use rlogs;
 use log::*;
+use rlogs;
 
 fn main() -> eyre::Result<()> {
     color_eyre::install()?;
