@@ -10,5 +10,5 @@ mod tests {
 }
 
 pub fn init() { 
-    info!("初始化rpc服务器");
+    info!("🟢 初始化rpc服务器");
 }

@@ -114,7 +114,7 @@ impl GossipProtocal {
 }
 */
 pub fn init() { 
-    info!("初始化p2p网络")
+    info!("🟢 初始化p2p网络")
 }
 
 

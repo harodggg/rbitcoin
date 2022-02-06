@@ -25,8 +25,8 @@ const LOG_LEVEL: LevelFilter = LevelFilter::Trace;
 fn main() -> eyre::Result<()> {
     color_eyre::install()?;
     rlogs::init(LOG_LEVEL);
-    info!("初始化日志系统");
+    info!("🚀 初始化日志系统");
     rbitcoin_cli::run()?;
-    warn!("客户端结束结束运行，成功退出");
+    warn!("❗ 客户端结束结束运行，成功退出");
     Ok(())
 }

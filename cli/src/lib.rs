@@ -38,12 +38,11 @@ struct Opt {
 
 pub fn run() -> Result<(),error> { 
 	let args = Opt::from_args();
-    info!("启动客户端");
     match &args.subcommand {
 
-        SubComand::Testnet => {info!("Btc测试网启动")},
+        SubComand::Testnet => {info!("🟢 Btc测试网启动")},
         SubComand::Btc => {
-                    info!("开始运行rbitcoin主网客户端程序");
+                    info!("🟢 开始运行rbitcoin主网客户端程序");
                     start_bitcoin_network(SOFTWARE_NAME, AUTHOR, BITCOIN_VERSION);},
         _ => error!("命令错误,请重试")
     }
@@ -53,17 +52,17 @@ pub fn run() -> Result<(),error> {
 
 
 fn show_metadata_message(software_name: &str,author: &str,version: u64) {
-    info!("**********************************");
-    info!("<客户端名字>: {}          **",  software_name );
-    info!("<作者>: {}                 **", author);
-    info!("<rbitcoin版本>: {}       **", version);
-    info!("**********************************");
-    warn!("warning");
-    debug!("debug");
-    error!("error");
-    trace!("trace");
+    info!("*************************************");
+    info!("🔶 <客户端名字>: {}          **",  software_name );
+    info!("🔷 <作者>: {}                 **", author);
+    info!("💠 <rbitcoin版本>: {}       **", version);
+    info!("*************************************");
+    warn!("🟡 warning");
+    debug!("🔵 debug");
+    error!("🔴 error");
+    trace!("🟣 trace");
 }
-
+// 初始化网络
 fn start_bitcoin_network(software_name: &str,author: &str,version: u64) { 
     show_metadata_message(software_name, author, version);
     db::init();
