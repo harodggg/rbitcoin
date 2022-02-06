@@ -8,3 +8,7 @@ edition = "2018"
 [dependencies]
 structopt = { version = "0.2", default-features = false }
 log = "0.4"
+rpc = { path = "../rpc" }
+db  = { path = "../db" }
+p2p = { path = "../p2p" }
+

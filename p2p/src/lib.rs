@@ -1,4 +1,4 @@
-
+use log::*;
 enum State { 
     Alive,
     Suspect,
@@ -16,7 +16,7 @@ struct Node {
     port: u32,
     state: State,
 }
-
+/*
 struct GossipProtocol {
     config: Config,
     connections: vec![addr]
@@ -111,6 +111,10 @@ impl GossipProtocal {
     fn brockcast_message(node:vec<Node>,message: String) -> Result((),Error) { 
 
     }
+}
+*/
+pub fn init() { 
+    info!("初始化p2p网络")
 }
 
 

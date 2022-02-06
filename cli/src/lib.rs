@@ -4,6 +4,10 @@ use contants::*;
 use std::io::Error as error;
 use structopt::StructOpt;
 use log::*;
+use db;
+use rpc;
+use p2p;
+
 
 #[derive(StructOpt,Debug)]
 #[structopt(about = "Select a subcommand")]
@@ -40,7 +44,7 @@ pub fn run() -> Result<(),error> {
         SubComand::Testnet => {info!("Btc测试网启动")},
         SubComand::Btc => {
                     info!("开始运行rbitcoin主网客户端程序");
-                    show_metadata_message(SOFTWARE_NAME, AUTHOR, BITCOIN_VERSION);},
+                    start_bitcoin_network(SOFTWARE_NAME, AUTHOR, BITCOIN_VERSION);},
         _ => error!("命令错误,请重试")
     }
     
@@ -58,4 +62,11 @@ fn show_metadata_message(software_name: &str,author: &str,version: u64) {
     debug!("debug");
     error!("error");
     trace!("trace");
+}
+
+fn start_bitcoin_network(software_name: &str,author: &str,version: u64) { 
+    show_metadata_message(software_name, author, version);
+    db::init();
+    rpc::init();
+    p2p::init();
 }
