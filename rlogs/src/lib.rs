@@ -29,13 +29,13 @@ fn level_add_color(record: &Record) -> String {
   let  record_level_and_colors = match record.level() { 
             log::Level::Error =>  Color::Fixed(9).bold().paint(record.level().to_string()),
             log::Level::Debug =>  Color::Fixed(14).paint(record.level().to_string()),
-            log::Level::Info  =>  Color::Fixed(10).paint(record.level().to_string()),
+            log::Level::Info  =>  Color::Fixed(10).paint(record.level().to_string() + " "),
             log::Level::Trace =>  Color::Fixed(12).paint(record.level().to_string()),
-            log::Level::Warn  =>  Color::Fixed(11).bold().paint(record.level().to_string()),
+            log::Level::Warn  =>  Color::Fixed(11).bold().paint(record.level().to_string() + " "),
     };
         
     format!(
-                "{} [{}] {}",
+                "{} {} <=> {}",
                 Color::Fixed(8).bold().paint(strftime()),
                 record_level_and_colors,
                 record.args() 
