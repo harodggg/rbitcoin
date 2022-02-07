@@ -16,9 +16,9 @@
 // along with Rbitcoin.  If not, see <http://www.gnu.org/licenses/>.
 
 use color_eyre::eyre;
+use log::LevelFilter;
 use log::*;
 use rlogs;
-use log::LevelFilter;
 
 const LOG_LEVEL: LevelFilter = LevelFilter::Trace;
 
