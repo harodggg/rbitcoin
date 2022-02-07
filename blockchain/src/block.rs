@@ -1,47 +1,40 @@
-
-
-struct BlockHeader { 
-	version: u32,
-	timestamp: u64,
-	bits: u32,
-	HashPrevBlock: u256,
-	HashMerkleBlock: u256,
-	nonce: u32,
-}
-
-struct Transaction { 
-	version: i32,
-	locktime: u32,
-	inputs: Vec![TransactionInput],
-	outputs: Vec![TransactionOutput],
-}
-
-struct TransactionInput { 
-	pre_outpoint: OutPoint,
-	scriptSig: Bytes,
-}
-
-struct TransactionOutput { 
-	value:u64,
-	scriptPubKey: Bytes,
-
-}
-
-struct OutPoint { 
-	point: H256,
-	index: u32,
-
-}
+use transaction;
 
 struct Block { 
-	blockheader: BlockHeader,
-	transactions: &Transaction
+	//块版本，version 
+	version: u32,
+	// 计算的nonce.
+	nonce: u32,
+	// 块时间
+	timestramp: u32,
+	// 块难度
+	bit: u32,
+	prev_block_hash:H256,
+	
+	merkle_hash:H256,
+
+	transaction: vec<Transaction>,
 }
 
+impl Block { 
+	fn default(version:u32,nonce:u32,
+		timestramp:u32,bit:u32,
+		prev_block_hash:H256,
+		merkle_hash:H256,
+		transaction: vec<Transaction>) -> Self { 
 
-trait Block { 
-fn defalut() -> Block { 
+		Block { 
 
+
+		}
+	}
+
+	fn build_merkle_root(&self) -> H256 { 
+
+	}
+
+	fn hash(&self) -> H256 { 
+
+	}
 }
 
-}
