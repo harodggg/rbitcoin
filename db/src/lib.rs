@@ -1,12 +1,8 @@
 use log::*;
-use std::path::{Path, PathBuf};
-use std::str;
-use std::{env, fs, path};
-
+use std::path::PathBuf;
+use std::{env, fs};
 use leveldb::database::Database;
-use leveldb::iterator::Iterable;
-use leveldb::options::{Options,WriteOptions,ReadOptions};
-use std::fmt::{Formatter,Display, Result};
+use leveldb::options::{Options};
 use std::fmt;
 
 
@@ -41,8 +37,8 @@ impl BlockChainDatabase {
     }
 }
 
-impl Display for BlockChainDatabase{ 
-    fn fmt(&self,f: &mut Formatter)-> fmt::Result { 
+impl fmt::Display for BlockChainDatabase{ 
+    fn fmt(&self,f: &mut fmt::Formatter)-> fmt::Result { 
         write!(f,"数据库路径是{:?}",self.db_path )
     }
 }
