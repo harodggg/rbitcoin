@@ -2,7 +2,7 @@
 a rust client for bitcoin
 
 
-># 如何从0设计一个bitcoin系统，设计的权衡和决策时什么？
+# 如何从0设计一个bitcoin系统，设计的权衡和决策时什么？
 >>## 1,什么是bitcoin?
         一个点对点的电子货币系统。
         
