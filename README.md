@@ -115,6 +115,8 @@ a rust client for bitcoin
                                 pow 共识（bitcoin）
                         确定性共识
                                 pos 共识 (polkadot),bpfs(platon)。
+        
+        通过引入延时和随机，区块链确保了同一时刻只有一个角色可以写入账本。
 
 ### 至此，整个bitcion系统已经是可行的了。
 
